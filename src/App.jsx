@@ -12,13 +12,21 @@ export default function App() {
     localStorage.setItem("ITEMS", JSON.stringify(todos))
   },[todos])
 
-  function handleSubmit(e) {
+   function handleSubmit(e) {
     e.preventDefault();
+    
+    // Prevent adding empty items or only spaces
+    if (newItem.trim() === "") {
+      alert("Please enter a valid to-do item!");
+      return;
+    }
+  
     setTodos(currentTodos => [
       ...currentTodos,
       { id: crypto.randomUUID(), title: newItem, completed: false }
     ]);
-    setNewItem("");
+  
+    setNewItem(""); // Clear the input field after adding
   }
 
   function toggleTodos(id, completed) {
