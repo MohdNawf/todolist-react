@@ -1,2 +1,1 @@
-# todolist-react
-a simple todo list using react
+trying to learn react through a simple to do list
