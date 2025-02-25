@@ -25,10 +25,9 @@ jobs:
         run: npm install  # Install project dependencies
 
       - name: Build the React app
-        run: |
-          CI=false npm run build  # Disable CI for the build step
+        run: npm run build  # No need to set CI in the command
         env:
-          CI: false  # Explicitly set CI to false (optional redundancy)
+          CI: false  # Set CI to false once in the environment
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4  # Deploy to GitHub Pages
