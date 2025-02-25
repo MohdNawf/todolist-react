@@ -1,1 +1,0 @@
-trying to learn react through a simple to do list
